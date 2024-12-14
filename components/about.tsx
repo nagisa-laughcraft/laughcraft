@@ -1,6 +1,19 @@
 export const About = () => (
-  <p className="text-[#181411] text-base font-normal leading-normal pb-3 pt-1 px-4">
-    I'm a web developer with over 10 years of experience. I specialize in building custom web applications that are fast, secure, and scalable. My goal is to help
-    companies achieve their digital transformation by providing high-quality and cost-effective web solutions.
-  </p>
+  <>
+    <div>
+      <p>2016年に新卒でソフトウェアハウスに就職</p>
+      <p>警察・消防向けのシステム開発、医療用組み込み端末の開発などを経験したのち</p>
+      <p>Web系スタートアップベンチャー企業に転職、ECサイトの保守・開発のほか、採用、企画などを経験</p>
+    </div>
+    <div className="py-4">
+      <p>2019年10月よりフリーランスとして活動</p>
+    </div>
+    <div>
+      <p className="pb-4">資格:</p>
+      <p>2017/12 応用情報技術者</p>
+      <p>2018/05 情報セキュリティマネジメント</p>
+      <p>2020/02 HTML5プロフェッショナル認定資格 レベル2</p>
+    </div>
+  </>
+
 )
