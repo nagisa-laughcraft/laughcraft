@@ -24,24 +24,22 @@ interface Projects {
   limit: number;
 }
 
+const Card = ({ project }: { project: Project }) => (
+  <div className="flex flex-col gap-3 pb-3 w-60 border-2">
+    <Image src={project.image.url} alt={project.name} width={300} height={300}></Image>
+    <div>
+      <p className="text-base font-medium leading-normal">{project.name}</p>
+      <p className="text-sm font-normal leading-normal">{project.text}</p>
+    </div>
+  </div>
+)
+
 export const Projects = async () => {
   const { contents: projects }: Projects = await client.get({ endpoint: "projects" });
   return (
-    <div className="flex flex-col gap-10 px-4 py-4 @container">
+    <div className="flex gap-10 @container flex-wrap">
       {
-        projects.map(project => {
-          return (
-            <div key={project.id} className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
-              <div className="flex flex-col gap-3 pb-3">
-                <Image src={project.image.url} alt={project.name} width={600} height={600}></Image>
-                <div>
-                  <p className="text-[#181411] text-base font-medium leading-normal">{project.name}</p>
-                  <p className="text-[#8a7160] text-sm font-normal leading-normal">{project.text}</p>
-                </div>
-              </div>
-            </div>
-          )
-        })
+        projects.map(project => <Card key={project.id} project={project} />)
       }
     </div>
   )

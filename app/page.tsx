@@ -2,6 +2,7 @@ import { Header } from '@/components/header'
 import { About } from '@/components/about'
 import { Skills } from '@/components/skills';
 import { Projects } from '@/components/projects';
+import { Title } from '@/components/title';
 
 export default async function Home() {
   return (
@@ -11,17 +12,12 @@ export default async function Home() {
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <Header />
             <main>
-              <h2 className="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
+              <Title>About Me</Title>
               <About />
-              <h2
-                className="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
-              >
-                Projects
-              </h2>
-              <Projects />
-              <h2 className="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Skills</h2>
+              <Title>Skills</Title>
               <Skills />
-              <h2 className="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Ablility</h2>
+              <Title>Projects</Title>
+              <Projects />
             </main>
           </div>
         </div>
