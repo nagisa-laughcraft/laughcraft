@@ -24,12 +24,19 @@ interface Projects {
   limit: number;
 }
 
-const Card = ({ project }: { project: Project }) => (
-  <div className="flex flex-col gap-3 pb-3 w-60 border-2">
-    <Image src={project.image.url} alt={project.name} width={300} height={300}></Image>
-    <div>
-      <p className="text-base font-medium leading-normal">{project.name}</p>
-      <p className="text-sm font-normal leading-normal">{project.text}</p>
+{/* <div>
+<p className="text-base font-medium leading-normal">{project.name}</p>
+<p className="text-sm font-normal leading-normal">{project.text}</p>
+</div> */}
+
+// TODO: hover時に情報出す & リンク
+// TODO: indexがminの時とmaxの時の処理
+const Card = ({ project, index }: { project: Project, index: number }) => (
+  <div className="carousel-item relative w-full h-full">
+    <Image id={`slide-${index}`} src={project.image.url} alt={project.name} width={1000} height={600} />
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a href={`#slide-${index - 1}`} className="btn btn-circle">❮</a>
+      <a href={`#slide-${index + 1}`} className="btn btn-circle">❯</a>
     </div>
   </div>
 )
@@ -37,9 +44,9 @@ const Card = ({ project }: { project: Project }) => (
 export const Projects = async () => {
   const { contents: projects }: Projects = await client.get({ endpoint: "projects" });
   return (
-    <div className="flex gap-10 @container flex-wrap">
+    <div className="carousel w-full m-4">
       {
-        projects.map(project => <Card key={project.id} project={project} />)
+        projects.map((project, index) => <Card key={project.id} project={project} index={index} />)
       }
     </div>
   )
