@@ -11,34 +11,29 @@ const gridPoints = Array.from({ length: MAX_NUMBER }, (_, i) =>
 );
 
 const labels = [
-  "フロントエンド",
-  "UIデザイン",
-  "バックエンド",
-  "データベース",
-  "インフラ",
-  "プロジェクトマネジメント",
-  "スマホアプリ"
+  "Frontend",
+  "Ui Design",
+  "Backend",
+  "Database",
+  "Infrastructure",
+  "Management",
+  "Mobile App"
 ]
 
 export const RaderChart = ({
   width = 600,
-  height = 600,
-}: Record<
-  | "width"
-  | "height",
-  number
->) => {
-  const rScale = scaleLinear().domain([0, MAX_NUMBER]).range([0, width / 2 - 50])
+}: { width: number }) => {
+  const rScale = scaleLinear().domain([0, MAX_NUMBER]).range([0, width / 2 - 30])
 
   const x = (value: number, index: number) => rScale(value) * Math.cos(2 * Math.PI / ANGLE_NUMBER * index - (Math.PI / 2)) + width / 2
-  const y = (value: number, index: number) => rScale(value) * Math.sin(2 * Math.PI / ANGLE_NUMBER * index - (Math.PI / 2)) + height / 2
+  const y = (value: number, index: number) => rScale(value) * Math.sin(2 * Math.PI / ANGLE_NUMBER * index - (Math.PI / 2)) + width / 2
 
   const getLine = line<number>()
     .x((d, i) => x(d, i))
     .y((d, i) => y(d, i))
 
   return (
-    <svg width={width} height={height}>
+    <svg width={width} height={width}>
       <g>
         {
           gridPoints.map((grid, i) => (
@@ -57,8 +52,8 @@ export const RaderChart = ({
           <text
             key={label}
             fontSize="15px"
-            x={x(MAX_NUMBER, i) - 50}
-            y={y(MAX_NUMBER, i)}
+            x={x(MAX_NUMBER, i) - 30}
+            y={y(MAX_NUMBER, i) - 10}
           >
             {label}
           </text>
