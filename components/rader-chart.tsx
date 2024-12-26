@@ -3,7 +3,7 @@ import { line, scaleLinear } from "d3";
 const ANGLE_NUMBER = 7
 const MAX_NUMBER = 5
 
-const result = [5, 3, 4, 4, 3, 4, 3];
+const result = [5, 3, 5, 4, 3, 4, 3];
 
 // gridラインの二次元配列を生成している[[1,1,1,1,1,1],[2,2,2,2,2,2]...]など
 const gridPoints = Array.from({ length: MAX_NUMBER }, (_, i) =>
@@ -41,8 +41,8 @@ export const RaderChart = ({
               key={i}
               fill="none"
               stroke="currentColor"
-              strokeDasharray="2"
-              strokeWidth="2"
+              strokeDasharray="4 2"
+              strokeWidth="1"
               className="fill-none"
               d={`${getLine(grid)} z`}
             />
