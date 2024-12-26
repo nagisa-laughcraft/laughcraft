@@ -5,8 +5,8 @@ export const Skills = () => {
   return (
     <>
       <RaderChart
-        width={600}
-        height={600}
+        width={300}
+        height={300}
       />
       <div className="flex gap-3 p-3 flex-wrap pr-4">
         {skills.map(skill => {
