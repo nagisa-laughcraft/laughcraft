@@ -1,4 +1,5 @@
 import { Header } from '@/components/header'
+import { MainVisual } from '@/components/main-visual'
 import { About } from '@/components/about'
 import { Skills } from '@/components/skills';
 import { Projects } from '@/components/projects';
@@ -6,9 +7,12 @@ import { Title } from '@/components/title';
 
 export default async function Home() {
   return (
-    <div className="px-12 py-4 bg-white">
-      <Header />
-      <main>
+    <div>
+      <div className='w-screen items-center'>
+        <Header />
+      </div>
+      <MainVisual />
+      <main className="px-12 py-4 bg-white">
         <Title>About Me</Title>
         <About />
         <Title>Skills</Title>

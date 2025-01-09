@@ -10,7 +10,7 @@ export const Skills = () => {
   return (
     <div className="md:flex">
       <RaderChart
-        width={isMobile ? width - 100 : 400}
+        width={isMobile ? width - 120 : 400}
       />
       <div className="flex gap-3 p-3 flex-wrap pr-4">
         {skills.map(skill => {
