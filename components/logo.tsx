@@ -1,5 +1,5 @@
 export const Logo = () => (
-  <div className="flex p-4 gap-1">
+  <div className="flex p-4 gap-1 opacity-0 animate-fadeIn" style={{ animationDelay: "3.75s" }}>
     <div className="size-8 pt-1">
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -8,6 +8,6 @@ export const Logo = () => (
         />
       </svg>
     </div>
-    <h1 className="text-gray-600 text-3xl font-bold leading-tight tracking-wide">LaughCraft</h1>
+    <h1 className="text-gray-600 text-3xl font-bold leading-tight">LaughCraft</h1>
   </div>
 )
