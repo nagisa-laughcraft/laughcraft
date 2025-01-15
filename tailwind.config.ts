@@ -14,7 +14,11 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'yusei': ["Yusei Magic", "serif"]
+        yusei: ["Yusei Magic", "serif"]
+      },
+      backgroundImage: {
+        mainVisualSp: "url(/main_visual_sp.png)",
+        mainVisualPc: "url(/main_visual_pc.png)"
       },
       keyframes: {
         fadeIn: {
