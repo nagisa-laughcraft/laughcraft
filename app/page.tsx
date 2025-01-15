@@ -6,16 +6,27 @@ import { Title } from '@/components/title';
 
 export default async function Home() {
   return (
-    <div>
-      <MainVisual />
+    <div className='h-screen snap-y snap-mandatory scroll-smooth animate-disableScroll'>
+      <div className='snap-start h-screen relative'>
+        <MainVisual />
+      </div>
+      
       <main className="px-12 py-4 bg-white md:px-48">
-        <Title>About Me</Title>
-        <About />
-        <Title>Skills</Title>
-        <Skills />
-        <Title>Projects</Title>
-        <Projects />
+        <div className='snap-start h-screen animation-timeline-view opacity-0 animate-easeIn'>
+          <Title>About Me</Title>
+          <About />
+        </div>
+        
+        <div className='snap-start h-screen animation-timeline-view opacity-0 animate-easeIn'>
+          <Title>Skills</Title>
+          <Skills />
+        </div>
+        
+        <div className='snap-start h-screen animation-timeline-view opacity-0 animate-easeIn'>
+          <Title>Projects</Title>
+          <Projects />
+        </div>
       </main>
-    </div >
+    </div>
   );
 }
