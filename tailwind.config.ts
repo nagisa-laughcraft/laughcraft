@@ -37,7 +37,8 @@ export default {
       animation: {
         easeOut: 'fadeIn 0.5s ease-out forwards',
         easeIn: 'fadeIn 3s ease-in forwards',
-        disableScroll: 'disableScroll .1s linear 3s both',
+        disableScroll: 'disableScroll .1s linear 3.5s both',
+        disableHeader: 'fadeIn .1s linear 3.5s both',
       },
     },
   },

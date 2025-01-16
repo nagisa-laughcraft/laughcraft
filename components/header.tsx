@@ -1,5 +1,5 @@
 export const Header = () => (
-  <header className="items-center fixed z-50">
+  <header className="animate-disableHeader w-full items-center fixed z-50 bg-white bg-opacity-95">
     <div className="flex p-4 gap-2">
       <div className="size-4 pt-0.5">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

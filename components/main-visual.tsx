@@ -21,7 +21,7 @@ export const MainVisual = () => {
         <div className="size-8 p-1 pt-2">
           <LogoIcon />
         </div>
-        <h1 className="text-gray-600 text-3xl font-bold leading-tight">LaughCraft</h1>
+        <h1 className="text-[#F2690D] text-3xl font-bold leading-tight">LaughCraft</h1>
       </div>
       <div className="mt-48 flex opacity-0 animate-easeOut" style={{ animationDelay: '3.5s' }}>
         <p className="text-gray-500 text-xl mr-2">Read More</p>

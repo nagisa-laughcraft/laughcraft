@@ -5,15 +5,17 @@ import { About } from '@/components/about'
 import { Values } from '@/components/values'
 import { Skills } from '@/components/skills'
 import { Projects } from '@/components/projects'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 
 export default async function Home() {
-  // animate-disableScroll を戻す
   return (
-    <main className="h-screen snap-y snap-mandatory scroll-smooth bg-mainVisualSp md:bg-mainVisualPc bg-cover bg-repeat-y">
+    <div className="h-screen animate-disableScroll scroll-smooth bg-mainVisualSp md:bg-mainVisualPc bg-cover">
+      <Header />
       <div className="h-screen bg-white bg-opacity-80 snap-start">
         <MainVisual />
       </div>
-      <div className="bg-white bg-opacity-95 px-12 md:px-48">
+      <main className="bg-white bg-opacity-95 px-12 md:px-48">
         <div className="snap-start animation-timeline-view opacity-0 animate-easeIn">
           <section>
             <Title>What is LaughCraft</Title>
@@ -30,7 +32,8 @@ export default async function Home() {
             <Projects />
           </section>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }
