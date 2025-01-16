@@ -10,7 +10,7 @@ import { Contact } from '@/components/contact'
 export default async function Home() {
   // animate-disableScroll を戻す
   return (
-    <main className="h-screen snap-y snap-mandatory scroll-smooth bg-mainVisualSp md:bg-mainVisualPc bg-cover">
+    <main className="h-screen snap-y snap-mandatory scroll-smooth bg-mainVisualSp md:bg-mainVisualPc bg-cover bg-repeat-y">
       <div className="h-screen bg-white bg-opacity-80 snap-start">
         <MainVisual />
       </div>
@@ -19,25 +19,19 @@ export default async function Home() {
           <section>
             <Title>What is LaughCraft</Title>
             <Description />
-          </section>
-          <section>
-            <Title>Who is Nagisa</Title>
             <About />
-          </section>
-          <section>
-            <Title>Value Proposition | LaughCraftが提供するもの</Title>
-            <Values />
-          </section>
-          <section>
-            <Title>Skills | できること</Title>
             <Skills />
           </section>
           <section>
-            <Title>Works | 制作実績</Title>
+            <Title>Value Proposition</Title>
+            <Values />
+          </section>
+          <section>
+            <Title>Works</Title>
             <Projects />
           </section>
           <section>
-            <Title>Contact | お問い合わせ</Title>
+            <Title>Contact</Title>
             <Contact />
           </section>
         </div>
