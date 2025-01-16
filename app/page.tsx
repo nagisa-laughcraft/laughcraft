@@ -5,7 +5,6 @@ import { About } from '@/components/about'
 import { Values } from '@/components/values'
 import { Skills } from '@/components/skills'
 import { Projects } from '@/components/projects'
-import { Contact } from '@/components/contact'
 
 export default async function Home() {
   // animate-disableScroll を戻す
@@ -29,10 +28,6 @@ export default async function Home() {
           <section>
             <Title>Works</Title>
             <Projects />
-          </section>
-          <section>
-            <Title>Contact</Title>
-            <Contact />
           </section>
         </div>
       </div>
