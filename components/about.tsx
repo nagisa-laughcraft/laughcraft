@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 export const About = () => (
   <div className="py-4 md:flex">
@@ -9,7 +9,9 @@ export const About = () => (
       <div>
         <p>2016年に新卒でソフトウェアハウスに就職</p>
         <p>警察・消防向けのシステム開発、医療用組み込み端末の開発などを経験したのち</p>
-        <p>Web系スタートアップベンチャー企業に転職、ECサイトの保守・開発のほか、採用、企画などを経験</p>
+        <p>
+          Web系スタートアップベンチャー企業に転職、ECサイトの保守・開発のほか、採用、企画などを経験
+        </p>
       </div>
       <div className="py-4">
         <p>2019年10月よりフリーランスとして活動</p>

@@ -1,24 +1,24 @@
-import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
       fontFamily: {
-        yusei: ["Yusei Magic", "serif"]
+        yusei: ['Yusei Magic', 'serif'],
       },
       backgroundImage: {
-        mainVisualSp: "url(/main_visual_sp.png)",
-        mainVisualPc: "url(/main_visual_pc.png)"
+        mainVisualSp: 'url(/main_visual_sp.png)',
+        mainVisualPc: 'url(/main_visual_pc.png)',
       },
       keyframes: {
         fadeIn: {
@@ -27,7 +27,7 @@ export default {
         },
         disableScroll: {
           '0%': { overflow: 'hidden' },
-          '100%': { overflow: 'auto' }
+          '100%': { overflow: 'auto' },
         },
         scrollSnap: {
           '0%': { scrollSnapType: 'y mandatory' },
@@ -48,5 +48,5 @@ export default {
         '.animation-timeline-view': { 'animation-timeline': 'view()', 'animation-range': 'entry' },
       })
     }),
-  ]
-} satisfies Config;
+  ],
+} satisfies Config

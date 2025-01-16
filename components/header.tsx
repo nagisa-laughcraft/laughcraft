@@ -9,7 +9,9 @@ export const Header = () => (
           />
         </svg>
       </div>
-      <h1 className="text-[#F2690D] text-lg font-bold leading-tight tracking-[-0.015em]">LaughCraft</h1>
+      <h1 className="text-[#F2690D] text-lg font-bold leading-tight tracking-[-0.015em]">
+        LaughCraft
+      </h1>
     </div>
   </header>
 )

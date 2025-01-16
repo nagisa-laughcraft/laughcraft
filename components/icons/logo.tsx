@@ -5,4 +5,4 @@ export const LogoIcon = () => (
       fill="#4b5563"
     />
   </svg>
-);
+)
