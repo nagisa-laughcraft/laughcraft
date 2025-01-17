@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export const SnsLinks = () => (
-  <div className="relative flex gap-4 mt-8 ease-in-animation">
+  <div className="relative flex gap-4 mt-8 ease-in-animation justify-center md:justify-start">
     <a href="https://twitter.com/nagisa_laugh" target="_blank" rel="noopener noreferrer">
       <div className="rounded-full p-3 border border-black">
         <Image src="/x-icon.png" alt="x Icon" width={24} height={24} />

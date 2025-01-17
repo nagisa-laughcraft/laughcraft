@@ -1,10 +1,10 @@
 import { MainVisual } from '@/components/main-visual'
 import { Title } from '@/components/title'
-import { Description } from '@/components/description'
 import { About } from '@/components/about'
 import { Values } from '@/components/values'
-import { Skills } from '@/components/skills'
 import { Works } from '@/components/works'
+import { Profile } from '@/components/profile'
+import { Skills } from '@/components/skills'
 import { Footer } from '@/components/footer'
 
 interface Section {
@@ -17,7 +17,7 @@ const sections: Section[] = [
   {
     id: 'about',
     title: 'About',
-    Component: Description,
+    Component: About,
   },
   {
     id: 'values',
@@ -32,7 +32,7 @@ const sections: Section[] = [
   {
     id: 'profile',
     title: 'Profile',
-    Component: About,
+    Component: Profile,
   },
   {
     id: 'skills',
@@ -47,11 +47,11 @@ export default async function Home() {
       <div className="h-screen bg-white bg-opacity-80 snap-start">
         <MainVisual />
       </div>
-      <main className="bg-white bg-opacity-95 px-12 md:px-48">
+      <main className="bg-white bg-opacity-95 pb-12 md:pb-36 px-8 xs:px-12 pc:px-48">
         <div>
           {sections.map(({ id, title, Component }) => (
-            <section key={id} className="py-12">
-              <Title>{title}</Title>
+            <section key={id} className="pt-12 md:pt-36">
+              {title !== 'About' ? <Title>{title}</Title> : <></>}
               <Component />
             </section>
           ))}

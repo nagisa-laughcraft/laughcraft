@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   darkMode: ['class'],
@@ -9,6 +10,11 @@ export default {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xs: '376px',
+      pc: '1025px',
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
         background: 'hsl(var(--background))',
@@ -104,7 +110,8 @@ export default {
       addUtilities({
         '.animation-timeline-view': {
           'animation-timeline': 'view()',
-          'animation-range': 'entry',
+          'animation-range-start': 'entry',
+          'animation-range-end': '40%',
         },
       })
     }),
