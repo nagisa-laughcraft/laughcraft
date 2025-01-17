@@ -7,6 +7,38 @@ import { Profile } from '@/components/profile'
 import { Skills } from '@/components/skills'
 import { Footer } from '@/components/footer'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Laughcraft | 遊び心で、機能以上の感動を',
+  description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
+  openGraph: {
+    title: 'Laughcraft | 遊び心で、機能以上の感動を',
+    description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
+    url: 'https://laughcraft.dev',
+    siteName: 'Laughcraft',
+    images: [
+      {
+        url: 'ogp/laughcraft_ogp.png',
+        width: 1200,
+        height: 630,
+        alt: 'Laughcraft OG Image',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  icons: {
+    icon: [{ url: '/favicon.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Laughcraft | 遊び心で、機能以上の感動を',
+    description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
+    images: ['ogp/laughcraft_ogp.png'],
+  },
+}
+
 interface Section {
   id: string
   title: string
