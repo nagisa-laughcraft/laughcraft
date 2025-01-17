@@ -48,7 +48,7 @@ export const Works = async () => {
         align: 'start',
         loop: true,
       }}
-      className="w-full"
+      className="w-full my-12 ease-in-animation"
     >
       <CarouselContent>
         {projects.map((project, index) => (

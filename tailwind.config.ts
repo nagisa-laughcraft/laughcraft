@@ -102,7 +102,10 @@ export default {
     // Add custom plugin for animation-timeline
     plugin(function ({ addUtilities }) {
       addUtilities({
-        '.animation-timeline-view': { 'animation-timeline': 'view()', 'animation-range': 'entry' },
+        '.animation-timeline-view': {
+          'animation-timeline': 'view()',
+          'animation-range': 'entry',
+        },
       })
     }),
     require('tailwindcss-animate'),
