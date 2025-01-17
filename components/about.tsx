@@ -1,10 +1,12 @@
 import Image from 'next/image'
+import { SnsLinks } from './snsLinks'
 
 export const About = () => (
   <div className="py-4 md:flex">
     <div className="relative w-72 h-72 m-4">
       <Image src="/icon.png" alt="my Icon" fill objectFit="cover" className="rounded-full" />
     </div>
+    <SnsLinks />
     <div className="text-slate-800 pt-4 md:pt-12 md:pl-12">
       <div>
         <p>2016年に新卒でソフトウェアハウスに就職</p>
