@@ -14,7 +14,7 @@ export const Footer = () => (
           LaughCraft
         </h1>
       </div>
-      <div className="text-white">© laughcraft.dev 2025</div>
+      <div className="text-white">© {new Date().getFullYear()} laughcraft.dev</div>
     </div>
   </footer>
 )

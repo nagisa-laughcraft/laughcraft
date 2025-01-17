@@ -17,8 +17,8 @@ export default {
         yusei: ['Yusei Magic', 'serif'],
       },
       backgroundImage: {
-        mainVisualSp: 'url(/main_visual_sp.png)',
-        mainVisualPc: 'url(/main_visual_pc.png)',
+        mainVisualSp: 'url(/mainvisual-sp.png)',
+        mainVisualPc: 'url(/mainvisual-pc.png)',
       },
       keyframes: {
         fadeIn: {
