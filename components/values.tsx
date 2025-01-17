@@ -16,7 +16,7 @@ const valueItems: ValueItem[] = [
   },
   {
     title: 'Speed',
-    description: '個人だからできるスピード感で成果をお届け',
+    description: '個人だからこそできるスピード感で成果をお届け',
     image: '/car.png',
     alt: 'Speed',
   },
@@ -35,11 +35,11 @@ const valueItems: ValueItem[] = [
 ] as const
 
 export const Values = () => (
-  <div className="py-4 flex gap-8 justify-center items-center flex-col md:flex-row">
+  <div className="pt-8 flex gap-8 justify-center items-center flex-col md:flex-row">
     {valueItems.map(({ title, description, image, alt }) => (
-      <div key={title} className="mt-12 w-[300px]">
+      <div key={title} className="w-[300px]">
         <h3 className="text-center text-xl ease-in-animation mb-4">{title}</h3>
-        <p className="text-center ease-in-animation min-h-24">{description}</p>
+        <p className="text-center ease-in-animation min-h-12">{description}</p>
         <Image src={image} alt={alt} width={300} height={300} className="ease-in-animation" />
       </div>
     ))}
