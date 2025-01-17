@@ -35,7 +35,7 @@ export const RaderChart = ({ width = 600 }: { width: number }) => {
     .y((d, i) => y(d, i))
 
   return (
-    <svg width={width} height={width}>
+    <svg width={width} height={width} className="ease-in-animation">
       <g>
         {gridPoints.map((grid, i) => (
           <path
