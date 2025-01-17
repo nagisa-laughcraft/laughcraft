@@ -4,7 +4,7 @@ import { Description } from '@/components/description'
 import { About } from '@/components/about'
 import { Values } from '@/components/values'
 import { Skills } from '@/components/skills'
-import { Projects } from '@/components/projects'
+import { Works } from '@/components/works'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 
@@ -17,11 +17,9 @@ export default async function Home() {
       </div>
       <main className="bg-white bg-opacity-95 px-12 md:px-48">
         <div className="snap-start animation-timeline-view opacity-0 animate-easeIn">
-          <section>
-            <Title>What is LaughCraft</Title>
+          <section className="py-12">
+            <Title>About</Title>
             <Description />
-            <About />
-            <Skills />
           </section>
           <section>
             <Title>Value Proposition</Title>
@@ -29,7 +27,12 @@ export default async function Home() {
           </section>
           <section>
             <Title>Works</Title>
-            <Projects />
+            <Works />
+          </section>
+          <section>
+            <Title>Profile</Title>
+            <About />
+            <Skills />
           </section>
         </div>
       </main>
