@@ -6,6 +6,7 @@ import { Works } from '@/components/works'
 import { Profile } from '@/components/profile'
 import { Skills } from '@/components/skills'
 import { Footer } from '@/components/footer'
+import { Contact } from '@/components/contact'
 
 import type { Metadata } from 'next'
 
@@ -70,6 +71,11 @@ const sections: Section[] = [
     id: 'skills',
     title: 'Skills',
     Component: Skills,
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    Component: Contact,
   },
 ] as const
 
