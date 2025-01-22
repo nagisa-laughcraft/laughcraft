@@ -26,13 +26,46 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: [{ url: '/favicon.svg' }],
+    icon: [{ url: '/favicon.ico' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Laughcraft | 遊び心で、機能以上の感動を',
     description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
     images: [`${BASE_URL}/ogp/laughcraft_ogp.png`],
+  },
+  metadataBase: new URL(BASE_URL),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  authors: [{ name: 'nagisa' }],
+  generator: 'Next.js',
+  applicationName: 'Laughcraft',
+  keywords: ['Laughcraft', 'Web開発', 'フリーランス', 'エンジニア', 'システム開発'],
+  creator: 'nagisa',
+  publisher: 'Laughcraft',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  themeColor: '#F2690D',
+  manifest: '/manifest.json',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
   },
 }
 
@@ -44,29 +77,39 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${GTM_ID}');
-            `,
-          }}
-        />
+        {GTM_ID && (
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                  'analytics_storage': 'denied',
+                  'ad_storage': 'denied'
+                });
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','${GTM_ID}');
+              `,
+            }}
+          />
+        )}
       </head>
       <body>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
         {children}
       </body>
     </html>
