@@ -23,19 +23,25 @@ const labels = [
 export const RaderChart = ({ width = 600 }: { width: number }) => {
   const rScale = scaleLinear()
     .domain([0, MAX_NUMBER])
-    .range([0, width / 2 - 30])
+    .range([0, Math.max(0, width / 2 - 30)])
 
   const x = (value: number, index: number) =>
-    rScale(value) * Math.cos(((2 * Math.PI) / ANGLE_NUMBER) * index - Math.PI / 2) + width / 2
+    Math.max(
+      0,
+      rScale(value) * Math.cos(((2 * Math.PI) / ANGLE_NUMBER) * index - Math.PI / 2) + width / 2
+    )
   const y = (value: number, index: number) =>
-    rScale(value) * Math.sin(((2 * Math.PI) / ANGLE_NUMBER) * index - Math.PI / 2) + width / 2
+    Math.max(
+      0,
+      rScale(value) * Math.sin(((2 * Math.PI) / ANGLE_NUMBER) * index - Math.PI / 2) + width / 2
+    )
 
   const getLine = line<number>()
     .x((d, i) => x(d, i))
     .y((d, i) => y(d, i))
 
   return (
-    <svg width={width} height={width} className="ease-in-animation">
+    <svg width={Math.max(0, width)} height={Math.max(0, width)} className="ease-in-animation">
       <g>
         {gridPoints.map((grid, i) => (
           <path
