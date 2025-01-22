@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import './globals.css'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
+const DOMAIN_NAME = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'localhost:3000'
+const BASE_URL = `https://${DOMAIN_NAME}`
 
 export const metadata: Metadata = {
   title: 'Laughcraft | 遊び心で、機能以上の感動を',
@@ -10,11 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Laughcraft | 遊び心で、機能以上の感動を',
     description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
-    url: 'https://laughcraft.dev',
+    url: BASE_URL,
     siteName: 'Laughcraft',
     images: [
       {
-        url: 'ogp/laughcraft_ogp.png',
+        url: `${BASE_URL}/ogp/laughcraft_ogp.png`,
         width: 1200,
         height: 630,
         alt: 'Laughcraft OG Image',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Laughcraft | 遊び心で、機能以上の感動を',
     description: 'Laughcraftは、フリーランスエンジニアnagisaによるWebシステム開発パートナーです。',
-    images: ['ogp/laughcraft_ogp.png'],
+    images: [`${BASE_URL}/ogp/laughcraft_ogp.png`],
   },
 }
 
