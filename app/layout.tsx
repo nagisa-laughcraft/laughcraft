@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { Metadata } from 'next'
 import './globals.css'
+import { PHProvider, PostHogPageView } from '@/components/providers/posthog-provider'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 const DOMAIN_NAME = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'localhost:3000'
@@ -110,7 +111,10 @@ export default function RootLayout({
             />
           </noscript>
         )}
-        {children}
+        <PHProvider>
+          <PostHogPageView />
+          {children}
+        </PHProvider>
       </body>
     </html>
   )
