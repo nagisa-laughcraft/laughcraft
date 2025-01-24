@@ -3,7 +3,7 @@
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST
@@ -42,5 +42,9 @@ interface PHProviderProps {
 export const PHProvider = ({ children }: PHProviderProps): JSX.Element => {
   if (!isPostHogEnabled) return <>{children}</>
 
-  return <PostHogProvider client={posthog}>{children}</PostHogProvider>
+  return (
+    <Suspense fallback={null}>
+      <PostHogProvider client={posthog}>{children}</PostHogProvider>
+    </Suspense>
+  )
 }
