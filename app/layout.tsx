@@ -55,14 +55,11 @@ export const metadata: Metadata = {
   applicationName: 'Laughcraft',
   keywords: ['Laughcraft', 'Web開発', 'フリーランス', 'エンジニア', 'システム開発'],
   creator: 'nagisa',
-  publisher: 'Laughcraft',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  themeColor: '#F2690D',
-  manifest: '/manifest.json',
   viewport: {
     width: 'device-width',
     initialScale: 1,
