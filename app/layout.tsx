@@ -1,7 +1,8 @@
 import Script from 'next/script'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import './globals.css'
 import { PHProvider, PostHogPageView } from '@/components/providers/posthog-provider'
+import { Suspense } from 'react'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 const DOMAIN_NAME = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'localhost:3000'
@@ -60,11 +61,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -109,7 +111,9 @@ export default function RootLayout({
           </noscript>
         )}
         <PHProvider>
-          <PostHogPageView />
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
           {children}
         </PHProvider>
       </body>

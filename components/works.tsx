@@ -43,7 +43,15 @@ const Card = ({ project, index }: { project: Project; index: number }) => (
 )
 
 export const Works = async () => {
-  const { contents: projects }: Projects = await client.get({ endpoint: 'projects' })
+  let projects: Project[] = []
+
+  try {
+    const { contents }: Projects = await client.get({ endpoint: 'projects' })
+    projects = contents
+  } catch (error) {
+    console.warn('Failed to fetch projects from microCMS:', error)
+  }
+
   return (
     <Carousel
       opts={{
