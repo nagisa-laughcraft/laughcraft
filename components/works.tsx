@@ -25,17 +25,13 @@ interface Projects {
 }
 
 const Card = ({ project }: { project: Project }) => (
-  <div className="relative w-full aspect-video">
-    <a href={project.link} target="_blank" rel="noopener noreferrer">
+  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+    <div className="relative w-full aspect-video">
       <Image src={project.image.url} fill objectFit="cover" alt={project.name} />
-      <div className="absolute size-full bg-black opacity-0 hover:cursor-pointer hover:opacity-100 hover:bg-opacity-40 md:left-[-1px]">
-        <p className="p-2 text-2xl text-center font-medium leading-normal text-white">
-          {project.name}
-        </p>
-        <p className="px-8 mt-6 text-sm font-normal leading-normal text-white">{project.text}</p>
-      </div>
-    </a>
-  </div>
+    </div>
+    <h3 className="mt-2 text-xl font-medium">{project.name}</h3>
+    <p className="mt-1 text-sm">{project.text}</p>
+  </a>
 )
 
 export const Works = async () => {
