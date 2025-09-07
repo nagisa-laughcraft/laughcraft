@@ -1,6 +1,5 @@
 import { client } from '@/libs/client'
 import Image from 'next/image'
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel'
 
 interface Project {
   id: string
@@ -25,11 +24,8 @@ interface Projects {
   limit: number
 }
 
-const Card = ({ project, index }: { project: Project; index: number }) => (
-  <CarouselItem
-    key={index}
-    className="relative md:basis-1/2 lg:basis-1/3 w-full aspect-video md:ml-4"
-  >
+const Card = ({ project }: { project: Project }) => (
+  <div className="relative w-full aspect-video">
     <a href={project.link} target="_blank" rel="noopener noreferrer">
       <Image src={project.image.url} fill objectFit="cover" alt={project.name} />
       <div className="absolute size-full bg-black opacity-0 hover:cursor-pointer hover:opacity-100 hover:bg-opacity-40 md:left-[-1px]">
@@ -39,7 +35,7 @@ const Card = ({ project, index }: { project: Project; index: number }) => (
         <p className="px-8 mt-6 text-sm font-normal leading-normal text-white">{project.text}</p>
       </div>
     </a>
-  </CarouselItem>
+  </div>
 )
 
 export const Works = async () => {
@@ -53,18 +49,10 @@ export const Works = async () => {
   }
 
   return (
-    <Carousel
-      opts={{
-        align: 'start',
-        loop: true,
-      }}
-      className="w-full pt-16 ease-in-animation"
-    >
-      <CarouselContent>
-        {projects.map((project, index) => (
-          <Card key={project.id} project={project} index={index} />
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="w-full pt-16 ease-in-animation grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <Card key={project.id} project={project} />
+      ))}
+    </div>
   )
 }
